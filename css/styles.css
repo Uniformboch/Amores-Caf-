@@ -18,6 +18,9 @@
   --gutter: 16px;
   --radio: 14px;
   --alto-nav: 118px; /* selector Bebidas/Comida + chips */
+  /* Netlify (plan gratuito) pone su botón fijo abajo a la derecha y no se puede ocultar:
+     las barras fijas se colocan por encima. Con un plan sin botón, cambiar a 0px. */
+  --reserva-netlify: 64px;
 }
 
 *,
@@ -94,7 +97,7 @@ textarea {
 .pagina {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--gutter) calc(104px + env(safe-area-inset-bottom));
+  padding: 0 var(--gutter) calc(104px + var(--reserva-netlify) + env(safe-area-inset-bottom));
   overflow-x: clip;
 }
 
@@ -694,7 +697,7 @@ textarea {
 .carrito__cuerpo {
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 4px var(--gutter) 20px;
+  padding: 4px var(--gutter) calc(20px + var(--reserva-netlify));
 }
 
 .carrito__vacio,
@@ -933,7 +936,7 @@ textarea {
 .barra {
   position: fixed;
   right: var(--gutter);
-  bottom: calc(12px + env(safe-area-inset-bottom));
+  bottom: calc(12px + var(--reserva-netlify) + env(safe-area-inset-bottom));
   left: var(--gutter);
   z-index: 30;
   display: flex;
@@ -981,7 +984,7 @@ textarea {
 .aviso {
   position: fixed;
   right: var(--gutter);
-  bottom: calc(84px + env(safe-area-inset-bottom));
+  bottom: calc(84px + var(--reserva-netlify) + env(safe-area-inset-bottom));
   left: var(--gutter);
   z-index: 60;
   width: fit-content;
@@ -1254,6 +1257,6 @@ textarea {
   }
 
   .aviso {
-    bottom: 24px;
+    bottom: calc(24px + var(--reserva-netlify));
   }
 }

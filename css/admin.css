@@ -1,7 +1,7 @@
 /* Panel del dueño. Usa los tokens y componentes de styles.css. */
 
 .admin {
-  padding: 0 var(--gutter) calc(110px + env(safe-area-inset-bottom));
+  padding: 0 var(--gutter) calc(110px + var(--reserva-netlify) + env(safe-area-inset-bottom));
 }
 
 .admin code {
@@ -584,7 +584,7 @@
 .barra-guardar {
   position: fixed;
   right: var(--gutter);
-  bottom: calc(12px + env(safe-area-inset-bottom));
+  bottom: calc(12px + var(--reserva-netlify) + env(safe-area-inset-bottom));
   left: var(--gutter);
   z-index: 30;
   display: flex;
@@ -627,12 +627,12 @@
 }
 
 .admin .aviso {
-  bottom: calc(80px + env(safe-area-inset-bottom));
+  bottom: calc(80px + var(--reserva-netlify) + env(safe-area-inset-bottom));
 }
 
 @media (min-width: 1024px) {
   .admin .aviso {
-    bottom: 88px;
+    bottom: calc(88px + var(--reserva-netlify));
   }
 }
 
