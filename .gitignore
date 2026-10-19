@@ -1,0 +1,17 @@
+# Carpeta que arma scripts/armar.mjs (Netlify la genera al publicar)
+publicar/
+
+# Dependencias y herramientas
+node_modules/
+.netlify/
+
+# Datos privados del antiguo servidor local (contraseña cifrada y respaldos)
+.admin/
+
+# Temporales
+__pycache__/
+*.tmp
+.env
+
+# Configuración local del editor
+.claude/

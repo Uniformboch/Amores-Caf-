@@ -1,0 +1,642 @@
+{
+  "version": 1,
+  "moneda": "MXN",
+  "config": {
+    "negocio": "Amores Café",
+    "lema": "Coffee & Eatery",
+    "whatsapp": "524771358745",
+    "whatsappNota": "Número de prueba (477 135 87 45) hasta que el café confirme el suyo."
+  },
+  "tamanos": {
+    "M": {
+      "nombre": "Mediano"
+    },
+    "G": {
+      "nombre": "Grande"
+    },
+    "H": {
+      "nombre": "Helado"
+    }
+  },
+  "extras": [
+    {
+      "id": "shot-extra",
+      "nombre": "Shot extra",
+      "precio": 10
+    },
+    {
+      "id": "leche-almendra",
+      "nombre": "Leche de almendra",
+      "precio": 15
+    },
+    {
+      "id": "proteina-extra",
+      "nombre": "Proteína extra",
+      "precio": 15
+    },
+    {
+      "id": "aguacate",
+      "nombre": "Aguacate",
+      "precio": 10
+    },
+    {
+      "id": "bolillo",
+      "nombre": "Bolillo",
+      "precio": 10
+    },
+    {
+      "id": "mascarpone",
+      "nombre": "Queso mascarpone",
+      "precio": 20
+    }
+  ],
+  "categorias": [
+    {
+      "id": "calientes",
+      "nombre": "Calientes",
+      "grupo": "bebidas",
+      "extrasPermitidos": [
+        "shot-extra",
+        "leche-almendra"
+      ],
+      "productos": [
+        {
+          "id": "americano",
+          "nombre": "Americano",
+          "precios": {
+            "M": 40,
+            "G": 45
+          },
+          "extrasPermitidos": [
+            "shot-extra"
+          ],
+          "agotado": true
+        },
+        {
+          "id": "cappuccino",
+          "nombre": "Cappuccino",
+          "precios": {
+            "M": 55,
+            "G": 60
+          },
+          "agotado": true
+        },
+        {
+          "id": "latte",
+          "nombre": "Latte",
+          "precios": {
+            "M": 55,
+            "G": 60
+          }
+        },
+        {
+          "id": "moka",
+          "nombre": "Moka",
+          "precios": {
+            "M": 60,
+            "G": 65
+          }
+        },
+        {
+          "id": "latte-caramel",
+          "nombre": "Latte caramel",
+          "precios": {
+            "M": 60,
+            "G": 65
+          },
+          "agotado": true
+        }
+      ]
+    },
+    {
+      "id": "sin-cafe",
+      "nombre": "Sin café",
+      "grupo": "bebidas",
+      "extrasPermitidos": [
+        "leche-almendra"
+      ],
+      "productos": [
+        {
+          "id": "matcha",
+          "nombre": "Matcha",
+          "precios": {
+            "M": 60,
+            "G": 65,
+            "H": 70
+          }
+        },
+        {
+          "id": "chai",
+          "nombre": "Chai",
+          "precios": {
+            "M": 60,
+            "G": 65,
+            "H": 70
+          }
+        },
+        {
+          "id": "taro",
+          "nombre": "Taro",
+          "precios": {
+            "M": 60,
+            "G": 65,
+            "H": 70
+          }
+        },
+        {
+          "id": "chocolate",
+          "nombre": "Chocolate",
+          "precios": {
+            "M": 55,
+            "G": 60,
+            "H": 65
+          }
+        }
+      ]
+    },
+    {
+      "id": "frios",
+      "nombre": "Fríos",
+      "grupo": "bebidas",
+      "extrasPermitidos": [
+        "shot-extra"
+      ],
+      "productos": [
+        {
+          "id": "iced-americano",
+          "nombre": "Iced americano",
+          "precios": {
+            "G": 55
+          }
+        },
+        {
+          "id": "iced-latte",
+          "nombre": "Iced latte",
+          "precios": {
+            "G": 65
+          },
+          "extrasPermitidos": [
+            "shot-extra",
+            "leche-almendra"
+          ]
+        },
+        {
+          "id": "iced-latte-caramel",
+          "nombre": "Iced latte caramel",
+          "precios": {
+            "G": 70
+          },
+          "extrasPermitidos": [
+            "shot-extra",
+            "leche-almendra"
+          ]
+        },
+        {
+          "id": "iced-moka",
+          "nombre": "Iced moka",
+          "precios": {
+            "G": 70
+          },
+          "extrasPermitidos": [
+            "shot-extra",
+            "leche-almendra"
+          ]
+        },
+        {
+          "id": "cold-brew",
+          "nombre": "Cold brew",
+          "precios": {
+            "G": 60
+          }
+        },
+        {
+          "id": "cold-brew-vainilla",
+          "nombre": "Cold brew vainilla",
+          "precios": {
+            "G": 65
+          }
+        },
+        {
+          "id": "brew-tonic",
+          "nombre": "Brew tonic",
+          "precios": {
+            "G": 80
+          }
+        },
+        {
+          "id": "espresso-tonic",
+          "nombre": "Espresso tonic",
+          "precios": {
+            "G": 75
+          }
+        },
+        {
+          "id": "sunrise-brew",
+          "nombre": "Sunrise brew",
+          "precios": {
+            "G": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": "frappes",
+      "nombre": "Frappés",
+      "grupo": "bebidas",
+      "prefijoPedido": "Frappé",
+      "extrasPermitidos": [
+        "leche-almendra"
+      ],
+      "productos": [
+        {
+          "id": "frappe-cappuccino",
+          "nombre": "Cappuccino",
+          "precios": {
+            "G": 70
+          },
+          "extrasPermitidos": [
+            "shot-extra",
+            "leche-almendra"
+          ]
+        },
+        {
+          "id": "frappe-moka",
+          "nombre": "Moka",
+          "precios": {
+            "G": 70
+          },
+          "extrasPermitidos": [
+            "shot-extra",
+            "leche-almendra"
+          ]
+        },
+        {
+          "id": "frappe-oreo",
+          "nombre": "Oreo",
+          "precios": {
+            "G": 70
+          }
+        },
+        {
+          "id": "frappe-taro",
+          "nombre": "Taro",
+          "precios": {
+            "G": 70
+          }
+        },
+        {
+          "id": "frappe-matcha",
+          "nombre": "Matcha",
+          "precios": {
+            "G": 70
+          }
+        },
+        {
+          "id": "frappe-chai",
+          "nombre": "Chai",
+          "precios": {
+            "G": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": "smoothies",
+      "nombre": "Smoothies",
+      "grupo": "bebidas",
+      "prefijoPedido": "Smoothie",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "smoothie-mango",
+          "nombre": "Mango",
+          "precios": {
+            "G": 75
+          }
+        },
+        {
+          "id": "smoothie-fresa",
+          "nombre": "Fresa",
+          "precios": {
+            "G": 75
+          }
+        },
+        {
+          "id": "smoothie-frutos-rojos",
+          "nombre": "Frutos rojos",
+          "precios": {
+            "G": 75
+          }
+        }
+      ]
+    },
+    {
+      "id": "embotellados",
+      "nombre": "Embotellados",
+      "grupo": "bebidas",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "agua-natural",
+          "nombre": "Agua natural",
+          "detalle": "600 ml",
+          "precios": {
+            "unico": 25
+          }
+        },
+        {
+          "id": "coca-cola",
+          "nombre": "Coca Cola",
+          "detalle": "600 ml",
+          "precios": {
+            "unico": 35
+          }
+        },
+        {
+          "id": "agua-mineral",
+          "nombre": "Agua mineral",
+          "detalle": "355 ml",
+          "precios": {
+            "unico": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "croissants-salados",
+      "nombre": "Croissants salados",
+      "grupo": "comida",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "basic-croissant",
+          "nombre": "Basic croissant",
+          "descripcion": "Spread de chipotle, queso fundido, jamón de pavo",
+          "precios": {
+            "unico": 65
+          }
+        },
+        {
+          "id": "serrano-honey-croissant",
+          "nombre": "Serrano honey croissant",
+          "descripcion": "Spicy honey, jamón serrano, queso fundido",
+          "precios": {
+            "unico": 75
+          }
+        },
+        {
+          "id": "pizza-melt-croissant",
+          "nombre": "Pizza melt croissant",
+          "descripcion": "Spread chipotle, salami, queso fundido",
+          "precios": {
+            "unico": 75
+          }
+        }
+      ]
+    },
+    {
+      "id": "croissants-dulces",
+      "nombre": "Croissants dulces",
+      "grupo": "comida",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "sweet-strawberry-croissant",
+          "nombre": "Sweet strawberry croissant",
+          "descripcion": "Crema pastelera, fresas frescas, azúcar glass",
+          "precios": {
+            "unico": 60
+          }
+        },
+        {
+          "id": "pistachio-cream-croissant",
+          "nombre": "Pistachio cream croissant",
+          "descripcion": "Crema de pistache, pistache troceado, azúcar glass",
+          "precios": {
+            "unico": 70
+          }
+        },
+        {
+          "id": "nutella-croissant",
+          "nombre": "Nutella croissant",
+          "descripcion": "Nutella, fresas frescas, azúcar glass",
+          "precios": {
+            "unico": 65
+          }
+        }
+      ]
+    },
+    {
+      "id": "baguettes",
+      "nombre": "Baguettes",
+      "grupo": "comida",
+      "prefijoPedido": "Baguette",
+      "extrasPermitidos": [
+        "proteina-extra",
+        "aguacate"
+      ],
+      "productos": [
+        {
+          "id": "baguette-pollo",
+          "nombre": "Pollo",
+          "precios": {
+            "unico": 75
+          }
+        },
+        {
+          "id": "baguette-pavo",
+          "nombre": "Pavo",
+          "precios": {
+            "unico": 75
+          }
+        },
+        {
+          "id": "baguette-arrachera",
+          "nombre": "Arrachera",
+          "precios": {
+            "unico": 85
+          }
+        },
+        {
+          "id": "baguette-jamon-serrano",
+          "nombre": "Jamón serrano",
+          "precios": {
+            "unico": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "bagels",
+      "nombre": "Bagels",
+      "grupo": "comida",
+      "descripcion": "Acompañados de ensalada de la casa",
+      "prefijoPedido": "Bagel",
+      "extrasPermitidos": [
+        "proteina-extra",
+        "aguacate"
+      ],
+      "productos": [
+        {
+          "id": "bagel-roast-beef",
+          "nombre": "Roast beef",
+          "precios": {
+            "unico": 120
+          }
+        }
+      ]
+    },
+    {
+      "id": "chilaquiles",
+      "nombre": "Chilaquiles",
+      "grupo": "comida",
+      "descripcion": "Acompañados de frijoles, crema, cilantro y cebolla",
+      "extrasPermitidos": [
+        "proteina-extra",
+        "aguacate",
+        "bolillo"
+      ],
+      "productos": [
+        {
+          "id": "chilaquiles",
+          "nombre": "Chilaquiles",
+          "precios": {
+            "unico": 95
+          },
+          "opciones": [
+            {
+              "id": "proteina",
+              "nombre": "Proteína",
+              "valores": [
+                {
+                  "id": "pollo",
+                  "nombre": "Pollo"
+                },
+                {
+                  "id": "arrachera",
+                  "nombre": "Arrachera"
+                },
+                {
+                  "id": "huevo",
+                  "nombre": "Huevo"
+                }
+              ]
+            },
+            {
+              "id": "salsa",
+              "nombre": "Salsa",
+              "valores": [
+                {
+                  "id": "verde",
+                  "nombre": "Salsa verde"
+                },
+                {
+                  "id": "roja",
+                  "nombre": "Salsa roja"
+                },
+                {
+                  "id": "morita",
+                  "nombre": "Salsa morita"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "varios",
+      "nombre": "Varios",
+      "grupo": "comida",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "torta-de-la-casa",
+          "nombre": "Torta de la casa",
+          "descripcion": "Chorizo en chile pasilla con frijoles",
+          "precios": {
+            "unico": 60
+          },
+          "extrasPermitidos": [
+            "proteina-extra",
+            "aguacate"
+          ]
+        },
+        {
+          "id": "ensalada-de-la-casa",
+          "nombre": "Ensalada de la casa",
+          "precios": {
+            "unico": 95
+          },
+          "extrasPermitidos": [
+            "proteina-extra",
+            "aguacate"
+          ]
+        },
+        {
+          "id": "sandwich-montecristo",
+          "nombre": "Sandwich Montecristo",
+          "precios": {
+            "unico": 85
+          }
+        },
+        {
+          "id": "avocado-toast",
+          "nombre": "Avocado toast",
+          "precios": {
+            "unico": 70
+          },
+          "opciones": [
+            {
+              "id": "piezas",
+              "nombre": "Piezas",
+              "valores": [
+                {
+                  "id": "una",
+                  "nombre": "1 pieza"
+                },
+                {
+                  "id": "dos",
+                  "nombre": "2 piezas",
+                  "precio": 50
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "algo-dulcito",
+      "nombre": "Algo dulcito",
+      "grupo": "comida",
+      "extrasPermitidos": [],
+      "productos": [
+        {
+          "id": "pan-de-elote",
+          "nombre": "Pan de elote",
+          "precios": {
+            "unico": 40
+          }
+        },
+        {
+          "id": "chocolatin",
+          "nombre": "Chocolatín",
+          "precios": {
+            "unico": 40
+          }
+        },
+        {
+          "id": "concha",
+          "nombre": "Concha",
+          "precios": {
+            "unico": 35
+          },
+          "extrasPermitidos": [
+            "mascarpone"
+          ]
+        }
+      ]
+    }
+  ]
+}

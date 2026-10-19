@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Menú · Amores Café</title>
+  <meta name="description" content="Menú de bebidas de Amores Café. Arma tu pedido y envíalo por WhatsApp.">
+  <meta name="theme-color" content="#F4F8F2">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/iconos/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/iconos/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Amores Café">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#menu">Ir al menú</a>
+
+  <div class="pagina" id="pagina">
+    <header class="portada">
+      <img class="portada__ilus portada__ilus--izq" src="assets/ilustraciones/persona-taza.png" alt="" width="336" height="786">
+      <img class="portada__ilus portada__ilus--der" src="assets/ilustraciones/grano-cafe.png" alt="" width="390" height="564">
+      <img class="portada__logo" src="assets/logo.png" alt="Amores Café" width="88" height="88">
+      <p class="portada__lema">Coffee &amp; Eatery</p>
+      <h1 class="portada__titulo">Menú</h1>
+      <svg class="portada__onda" viewBox="0 0 184 18" aria-hidden="true" focusable="false">
+        <path d="M3 9 Q 13.5 1 24 9 T 45 9 T 66 9 T 87 9 T 108 9 T 129 9 T 150 9 T 171 9 T 181 7" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <p class="portada__sub" id="portada-sub" aria-live="polite">Coffee &amp; drinks</p>
+      <p class="portada__intro">Elige lo que se te antoje, arma tu pedido y envíalo por WhatsApp.</p>
+    </header>
+
+    <nav class="categorias" aria-label="Categorías">
+      <div class="grupos" id="grupos" role="group" aria-label="Bebidas o comida">
+        <button class="grupo" type="button" data-grupo="bebidas" aria-pressed="true">Bebidas</button>
+        <button class="grupo" type="button" data-grupo="comida" aria-pressed="false">Comida</button>
+      </div>
+      <ul class="categorias__lista" id="categorias"></ul>
+    </nav>
+
+    <div class="layout">
+      <main class="menu" id="menu" tabindex="-1">
+        <p class="estado" id="estado" role="status">Cargando menú…</p>
+        <div class="menu__temporada" id="temporada"></div>
+        <div class="intro-comida" data-grupo-contenido="comida" hidden>
+          <img src="assets/ilustraciones/croissant.png" alt="" width="762" height="408" loading="lazy">
+        </div>
+        <div class="menu__secciones" id="secciones"></div>
+      </main>
+
+      <aside class="carrito" id="carrito" aria-labelledby="carrito-titulo">
+        <div class="carrito__cabecera">
+          <h2 class="carrito__titulo" id="carrito-titulo" tabindex="-1">Tu pedido</h2>
+          <button class="boton-icono carrito__cerrar" type="button" id="carrito-cerrar" aria-label="Cerrar pedido">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+
+        <div class="carrito__cuerpo">
+          <div class="carrito__vacio" id="carrito-vacio">
+            <img src="assets/ilustraciones/mujer-taza.png" alt="" width="645" height="645">
+            <p class="carrito__vacio-titulo">Tu pedido está vacío</p>
+            <p>Toca una bebida para agregarla.</p>
+          </div>
+
+          <ul class="lineas" id="lineas"></ul>
+
+          <form class="pedido" id="form-pedido" novalidate>
+            <div class="campo">
+              <label for="nombre">Tu nombre</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="given-name" maxlength="60" placeholder="¿A nombre de quién?" aria-describedby="nombre-error" required>
+              <p class="campo__error" id="nombre-error" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="campo">
+              <legend>Entrega</legend>
+              <div class="segmentos" role="radiogroup">
+                <label class="segmento"><input type="radio" name="entrega" value="llevar" required><span>Para llevar</span></label>
+                <label class="segmento"><input type="radio" name="entrega" value="domicilio"><span>A domicilio</span></label>
+              </div>
+              <p class="campo__error" id="entrega-error" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="campo" id="campo-direccion" hidden>
+              <label for="direccion">Dirección de entrega</label>
+              <textarea id="direccion" name="direccion" rows="2" maxlength="200" autocomplete="street-address" placeholder="Calle, número, colonia y referencias" aria-describedby="direccion-error direccion-nota"></textarea>
+              <p class="campo__nota" id="direccion-nota">El costo de envío se confirma por WhatsApp.</p>
+              <p class="campo__error" id="direccion-error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="notas">Notas <span class="opcional">(opcional)</span></label>
+              <textarea id="notas" name="notas" rows="2" maxlength="200" placeholder="Sin azúcar, poco hielo…"></textarea>
+            </div>
+
+            <div class="total">
+              <span>Total</span>
+              <span class="total__monto" id="total">$0</span>
+            </div>
+            <p class="total__nota" id="total-nota" hidden>Más envío, por confirmar.</p>
+
+            <p class="campo__error" id="lineas-error" aria-live="polite"></p>
+            <button class="boton boton--primario boton--ancho" type="submit">
+              <svg class="boton__icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z"/></svg>
+              Enviar pedido por WhatsApp
+            </button>
+            <p class="pedido__ayuda">Se abrirá WhatsApp con tu pedido escrito. Solo tienes que enviarlo.</p>
+          </form>
+
+          <div class="enviado" id="enviado" hidden>
+            <img src="assets/ilustraciones/tazas-mesa.png" alt="" width="900" height="711">
+            <p class="enviado__titulo" tabindex="-1">¿Ya enviaste tu pedido?</p>
+            <p>Si WhatsApp no se abrió, toca de nuevo «Abrir WhatsApp».</p>
+            <div class="enviado__acciones">
+              <button class="boton boton--primario" type="button" id="enviado-vaciar">Sí, empezar otro pedido</button>
+              <a class="boton" id="enviado-reabrir" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+              <button class="boton boton--texto" type="button" id="enviado-volver">Volver a mi pedido</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="pie">
+      <img src="assets/ilustraciones/cafeteras.png" alt="" width="900" height="483" loading="lazy">
+      <p class="pie__marca">Amores Café · Coffee &amp; Eatery</p>
+      <p>Precios en pesos mexicanos. Pedidos por WhatsApp.</p>
+    </footer>
+  </div>
+
+  <div class="velo" id="velo" hidden></div>
+
+  <button class="barra" type="button" id="barra" aria-controls="carrito" aria-expanded="false" hidden>
+    <span class="barra__cuenta" id="barra-cuenta">0</span>
+    <span class="barra__texto">Ver pedido</span>
+    <span class="barra__total" id="barra-total">$0</span>
+  </button>
+
+  <p class="aviso" id="aviso" role="status" aria-live="polite"></p>
+
+  <dialog class="hoja" id="hoja" aria-labelledby="hoja-titulo">
+    <form method="dialog" class="hoja__form" id="hoja-form">
+      <div class="hoja__cabecera">
+        <div>
+          <h2 class="hoja__titulo" id="hoja-titulo"></h2>
+          <p class="hoja__desc" id="hoja-desc"></p>
+        </div>
+        <button class="boton-icono" type="button" id="hoja-cerrar" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="hoja__cuerpo" id="hoja-cuerpo"></div>
+      <div class="hoja__pie">
+        <div class="contador" role="group" aria-label="Cantidad">
+          <button class="contador__boton" type="button" id="hoja-menos" aria-label="Quitar uno">−</button>
+          <output class="contador__valor" id="hoja-cantidad" aria-live="polite">1</output>
+          <button class="contador__boton" type="button" id="hoja-mas" aria-label="Agregar uno">+</button>
+        </div>
+        <button class="boton boton--primario hoja__agregar" type="submit" id="hoja-agregar" value="agregar">Agregar</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

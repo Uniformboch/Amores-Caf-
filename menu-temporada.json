@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "activa": true,
+  "categoria": {
+    "id": "temporada",
+    "nombre": "Temporada",
+    "descripcion": "Por tiempo limitado",
+    "extrasPermitidos": [],
+    "productos": [
+      {
+        "id": "mazapan-latte",
+        "nombre": "Mazapán latte",
+        "descripcion": "Mazapán troceado · latte helado",
+        "imagen": "assets/temporada/mazapan-latte.jpg",
+        "precios": {
+          "unico": 80
+        }
+      },
+      {
+        "id": "mango-matcha",
+        "nombre": "Mango matcha",
+        "descripcion": "Jarabe de mango casero · matcha latte",
+        "imagen": "assets/temporada/mango-matcha.jpg",
+        "precios": {
+          "unico": 85
+        }
+      },
+      {
+        "id": "cold-brew-jamaica",
+        "nombre": "Cold brew jamaica",
+        "descripcion": "Cold brew con concentrado de jamaica",
+        "imagen": "assets/temporada/cold-brew-jamaica.jpg",
+        "precios": {
+          "unico": 75
+        }
+      },
+      {
+        "id": "horchata-latte",
+        "nombre": "Horchata latte",
+        "descripcion": "Horchata casera · espresso",
+        "imagen": "assets/temporada/horchata-latte.jpg",
+        "precios": {
+          "unico": 85
+        },
+        "agotado": true
+      },
+      {
+        "id": "cacao-mexicano",
+        "nombre": "Cacao mexicano",
+        "descripcion": "Latte de cacao mexicano",
+        "imagen": "assets/temporada/cacao-mexicano.jpg",
+        "precios": {
+          "unico": 85
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel · Amores Café</title>
+  <meta name="theme-color" content="#F4F8F2">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/iconos/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/iconos/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script type="module" src="js/admin.js"></script>
+</head>
+<body class="admin">
+  <p class="admin-estado" id="pantalla-carga" role="status">Cargando panel…</p>
+
+  <main class="login" id="pantalla-login" hidden>
+    <img class="login__logo" src="assets/logo.png" alt="Amores Café" width="96" height="96">
+    <h1 class="login__titulo">Panel del dueño</h1>
+    <form class="pedido" id="form-login" novalidate>
+      <div class="campo">
+        <label for="contrasena">Contraseña</label>
+        <input id="contrasena" name="contrasena" type="password" autocomplete="current-password" required aria-describedby="login-error">
+        <p class="campo__error" id="login-error" aria-live="polite"></p>
+      </div>
+      <button class="boton boton--primario boton--ancho" type="submit" id="login-entrar">Entrar</button>
+    </form>
+    <p class="login__nota">Los cambios que guardes aquí se publican al instante en el menú.</p>
+  </main>
+
+  <div class="admin-panel" id="pantalla-panel" hidden>
+    <header class="admin-cabecera">
+      <img src="assets/logo.png" alt="" width="44" height="44">
+      <div class="admin-cabecera__textos">
+        <p class="admin-cabecera__titulo">Panel</p>
+        <p class="admin-cabecera__sub">Amores Café</p>
+      </div>
+      <a class="boton boton--chico" href="./" target="_blank" rel="noopener">Ver menú</a>
+      <button class="boton boton--chico boton--texto" type="button" id="salir">Salir</button>
+    </header>
+
+    <nav class="admin-pestanas" aria-label="Secciones del panel">
+      <button class="pestana" type="button" data-vista="bebidas">Bebidas</button>
+      <button class="pestana" type="button" data-vista="comida">Comida</button>
+      <button class="pestana" type="button" data-vista="temporada">Temporada</button>
+      <button class="pestana" type="button" data-vista="extras">Extras</button>
+      <button class="pestana" type="button" data-vista="ajustes">Ajustes</button>
+    </nav>
+
+    <div class="admin-errores" id="errores" role="alert" tabindex="-1" hidden></div>
+    <main class="admin-vista" id="vista" tabindex="-1"></main>
+  </div>
+
+  <div class="barra-guardar" id="barra-guardar" hidden>
+    <p class="barra-guardar__texto">Cambios sin publicar</p>
+    <button class="boton boton--chico barra-guardar__descartar" type="button" id="descartar">Descartar</button>
+    <button class="boton boton--chico barra-guardar__guardar" type="button" id="guardar">Guardar</button>
+  </div>
+
+  <p class="aviso" id="aviso" role="status" aria-live="polite"></p>
+
+  <dialog class="hoja" id="editor" aria-labelledby="editor-titulo">
+    <form class="hoja__form" id="editor-form" novalidate>
+      <div class="hoja__cabecera">
+        <div>
+          <h2 class="hoja__titulo" id="editor-titulo"></h2>
+          <p class="hoja__desc" id="editor-desc"></p>
+        </div>
+        <button class="boton-icono" type="button" id="editor-cerrar" aria-label="Cerrar sin cambios">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="hoja__cuerpo" id="editor-cuerpo"></div>
+      <div class="hoja__pie">
+        <button class="boton" type="button" id="editor-cancelar">Cancelar</button>
+        <button class="boton boton--primario hoja__agregar" type="submit" id="editor-listo">Listo</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
